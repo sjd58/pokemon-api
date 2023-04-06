@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "jHEsQxyFRojHfOpo242FqarlLYhjvrLCf41gwBQRPPdIRa7U31K4h8FLydZKE0x+8p+4byngDkqRAHHSoqSXwA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Student\\workspace\\samuel-dickson-student-code\\side-projects\\pokemon-api\\pokemon-api\\pokemon-api.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Student\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\3.1.31\\microsoft.netcore.app.host.win-x64.3.1.31.nupkg.sha512"
+  ],
+  "logs": []
+}
