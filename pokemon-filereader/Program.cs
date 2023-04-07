@@ -41,38 +41,45 @@ namespace pokemon_filereader
 
                                     //string sqlCommand = "INSERT INTO pokemon_db.dbo.pokemon VALUES()";
 
-                                    SqlCommand cmd = new SqlCommand("INSERT INTO pokemon(pokemon_number,name,type1,type2,total,hp,attack,defense,sp_attack,sp_defense,speed,generation,legendary) values (@pokemon_number, @name, @type1, @type2, @total, @hp, @attack, @defense, @sp_attack, @sp_defense, @speed, @generation, @legendary)", conn);
-                                    cmd.Parameters.AddWithValue("@pokemon_number", int.Parse(values[0]));
-                                    cmd.Parameters.AddWithValue("@name", values[1]);
-                                    cmd.Parameters.AddWithValue("@type1", values[2]);
-                                    cmd.Parameters.AddWithValue("@type2", values[3]);
-                                    cmd.Parameters.AddWithValue("@total", int.Parse(values[4]));
-                                    cmd.Parameters.AddWithValue("@hp", int.Parse(values[5]));
-                                    cmd.Parameters.AddWithValue("@attack", int.Parse(values[6]));
-                                    cmd.Parameters.AddWithValue("@defense", int.Parse(values[7]));
-                                    cmd.Parameters.AddWithValue("@sp_attack", int.Parse(values[8]));
-                                    cmd.Parameters.AddWithValue(@"sp_defense", int.Parse(values[9]));
-                                    cmd.Parameters.AddWithValue(@"speed", int.Parse(values[10]));
-                                    cmd.Parameters.AddWithValue(@"generation", int.Parse(values[11]));
-                                    cmd.Parameters.AddWithValue(@"legendary", bool.Parse(values[12]));
+                                    // Create a new Pokemon object, passing in the raw data into the constructor.
+                                    Pokemon pokemon = new Pokemon(values);
 
-                                    cmd.ExecuteNonQuery();
+                                    // If it's not the case that the Pokemon is type Ghost or Legendary, add the Pokemon to the database.
+                                    if (!((pokemon.Type1 == "Ghost") || (pokemon.Type2 == "Ghost") || (pokemon.Legendary == true)))
+                                    {
+                                        SqlCommand cmd = new SqlCommand("INSERT INTO pokemon(pokemon_number,name,type1,type2,total,hp,attack,defense,sp_attack,sp_defense,speed,generation,legendary) values (@pokemon_number, @name, @type1, @type2, @total, @hp, @attack, @defense, @sp_attack, @sp_defense, @speed, @generation, @legendary)", conn);
+                                        cmd.Parameters.AddWithValue("@pokemon_number", pokemon.PokemonNumber);
+                                        cmd.Parameters.AddWithValue("@name", pokemon.Name);
+                                        cmd.Parameters.AddWithValue("@type1", pokemon.Type1);
+                                        cmd.Parameters.AddWithValue("@type2", pokemon.Type2);
+                                        cmd.Parameters.AddWithValue("@total", pokemon.Total);
+                                        cmd.Parameters.AddWithValue("@hp", pokemon.HP);
+                                        cmd.Parameters.AddWithValue("@attack", pokemon.Attack);
+                                        cmd.Parameters.AddWithValue("@defense", pokemon.Defense);
+                                        cmd.Parameters.AddWithValue("@sp_attack", pokemon.SpAttack);
+                                        cmd.Parameters.AddWithValue(@"sp_defense", pokemon.SpDefense);
+                                        cmd.Parameters.AddWithValue(@"speed", pokemon.Speed);
+                                        cmd.Parameters.AddWithValue(@"generation", pokemon.Generation);
+                                        cmd.Parameters.AddWithValue(@"legendary", pokemon.Legendary);
+
+                                        cmd.ExecuteNonQuery();
+                                    }
                                 }
                                 lineNumber++;
 
                             }
                         }
                     }
-                    catch (Exception f)
+                    catch (Exception streamException)
                     {
-                        Console.WriteLine($"An exception happened while the StreamReader was working: {f}");
+                        Console.WriteLine($"An exception happened while the StreamReader was working: {streamException}");
                     }
                     conn.Close(); // Close the command
                 }
             }
-            catch (Exception e)
+            catch (Exception SqlException)
             {
-                Console.WriteLine($"An exception happened while the SqlConnection was working: {e}");
+                Console.WriteLine($"An exception happened while the SqlConnection was working: {SqlException}");
             }
         }
     }

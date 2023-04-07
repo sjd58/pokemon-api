@@ -56,7 +56,16 @@ The CobbleStone Software Team
 TO DO:
 - Break apart streamreader and DAO logic into separate classes
 - Implement CLI to prompt users for filepaths and the SQL connection string
-- Implement logic to add the information we want to the database, based on the description above.
+- Implement logic to add the information we want to the database, based on the description above. COMPLETED 4/6/2023
+
+**4/6/2023**
+- Implemented classes and folders for the API
+- Added overloaded constructors to the Pokemon class so that it will modify the Pokemon object based on the project specifications or not, depending on what we pass into the constructor.
+- Successfully added only the information we want to the database using the Pokemon constructor.
+- As per the directions for this assignment, I'm making sure I'm adding comments to my code throughout to explain my work and thought process.
+- MY GOALS FOR TODAY: Add Pokemon to the database using the specifications above, have the endpoint returning at least a list of Pokemon. COMPLETED.
+TO DO:
+- Merge entire project into one solution, right now there's two; one for the service that adds information to the database, one that runs the API.
 
 ### How to install and use
 

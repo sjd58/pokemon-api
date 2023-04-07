@@ -39,3 +39,9 @@ C:\Users\Student\workspace\samuel-dickson-student-code\side-projects\pokemon-api
 C:\Users\Student\workspace\samuel-dickson-student-code\side-projects\pokemon-api\pokemon-api\obj\Debug\netcoreapp3.1\pokemon-api.pdb
 C:\Users\Student\workspace\samuel-dickson-student-code\side-projects\pokemon-api\pokemon-api\obj\Debug\netcoreapp3.1\pokemon-api.genruntimeconfig.cache
 C:\Users\Student\workspace\samuel-dickson-student-code\side-projects\pokemon-api\pokemon-api\obj\Debug\netcoreapp3.1\pokemon-api.csproj.CopyComplete
+C:\Users\Student\workspace\samuel-dickson-student-code\side-projects\pokemon-api\pokemon-api\bin\Debug\netcoreapp3.1\System.Data.SqlClient.dll
+C:\Users\Student\workspace\samuel-dickson-student-code\side-projects\pokemon-api\pokemon-api\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\sni.dll
+C:\Users\Student\workspace\samuel-dickson-student-code\side-projects\pokemon-api\pokemon-api\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\sni.dll
+C:\Users\Student\workspace\samuel-dickson-student-code\side-projects\pokemon-api\pokemon-api\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\sni.dll
+C:\Users\Student\workspace\samuel-dickson-student-code\side-projects\pokemon-api\pokemon-api\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\Student\workspace\samuel-dickson-student-code\side-projects\pokemon-api\pokemon-api\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
