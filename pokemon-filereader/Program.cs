@@ -61,7 +61,6 @@ namespace pokemon_filereader
                                         cmd.Parameters.AddWithValue(@"speed", pokemon.Speed);
                                         cmd.Parameters.AddWithValue(@"generation", pokemon.Generation);
                                         cmd.Parameters.AddWithValue(@"legendary", pokemon.Legendary);
-
                                         cmd.ExecuteNonQuery();
                                     }
                                 }

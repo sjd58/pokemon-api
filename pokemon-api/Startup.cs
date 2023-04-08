@@ -23,9 +23,10 @@ namespace pokemon_api
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            // You will need to allow this connection string to be modified.
+            // Adding an admin connection string here.
             string dbConnectionString = "Server=.\\SQLEXPRESS;Database=pokemon_db;Trusted_Connection=True;";
             services.AddControllers();
+            // Setting up my files to work with this server.
             services.AddTransient<IPokemonDao>(sp => new PokemonDao(dbConnectionString));
         }
 

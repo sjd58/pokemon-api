@@ -7,5 +7,10 @@ namespace pokemon_api.DAOs
     {
         // This is using the model from the filereader project
         List<Pokemon> GetPokemon();
+
+        List<Pokemon> GetPokemonByName(string name);
+        List<Pokemon> GetPokemonByPage(int page);
+
+        List<Pokemon> GetAndFilterPokemon(string name, int hp, int attack, int defense, int page);
     }
 }
