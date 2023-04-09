@@ -6,6 +6,8 @@ using Microsoft.Extensions.Hosting;
 using pokemon_api.DAOs;
 using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -23,11 +25,16 @@ namespace pokemon_api
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            // Adding an admin connection string here.
-            string dbConnectionString = "Server=.\\SQLEXPRESS;Database=pokemon_db;Trusted_Connection=True;";
+
+            IConfigurationBuilder builder = new ConfigurationBuilder()
+                .SetBasePath(Directory.GetCurrentDirectory())
+                .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true);
+            IConfigurationRoot configuration = builder.Build();
+            string dbConnection = configuration.GetConnectionString("pokemon_db");
+
             services.AddControllers();
             // Setting up my files to work with this server.
-            services.AddTransient<IPokemonDao>(sp => new PokemonDao(dbConnectionString));
+            services.AddTransient<IPokemonDao>(sp => new PokemonDao(dbConnection));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
